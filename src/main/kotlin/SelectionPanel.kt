@@ -40,6 +40,10 @@ class SelectionPanel(
     inner class SelectionListener : ActionListener {
         override fun actionPerformed(e: ActionEvent) {
 
+            if (e.source == randomButton){
+                displayPanel.randomizeList()
+            }
+
             displayPanel.repaint()  // should be optimized to not redraw unnecessarily
         }
     }
