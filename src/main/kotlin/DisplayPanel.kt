@@ -1,7 +1,9 @@
 import java.awt.*
 import javax.swing.*
+import kotlin.random.Random
 
 class DisplayPanel(
+    private val listLength: Int = 300,
     private val list: MutableList<Int> = mutableListOf(),
 
     private val backgroundColor: Color = Color(20, 20, 20),
@@ -11,6 +13,12 @@ class DisplayPanel(
 
     init{
         border = BorderFactory.createEtchedBorder()
+
+        for(i in 0 until listLength){
+            list.add(Random.nextInt(800))
+            println("" + i + " | " + list[i])
+        }
+
     }
 
     override fun paint(g: Graphics) {
@@ -20,6 +28,17 @@ class DisplayPanel(
         g.color = backgroundColor
         g.fillRect(0, 0, 860, 610) // fill background
 
+
+    }
+
+    fun randomizeList(){
+
+        list.clear()
+
+        for(i in 0 until listLength){
+            list.add(Random.nextInt(800))
+            println("" + i + " | " + list[i])
+        }
 
     }
 
