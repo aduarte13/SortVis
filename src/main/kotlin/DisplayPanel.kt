@@ -42,6 +42,23 @@ class DisplayPanel(
         }
     }
 
+    fun bubbleSort(){
+
+        for (i in 0 until list.size - 1) {
+            for (j in 0 until list.size - i - 1) {
+                if (list[j] > list[j + 1]) {
+                    // Swap the elements
+                    val temp = list[j]
+                    list[j] = list[j + 1]
+                    list[j + 1] = temp
+                }
+            }
+        }
+
+        repaint()
+
+    }
+
     fun randomizeList(){
 
         list.clear()
