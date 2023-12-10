@@ -7,7 +7,13 @@ class SelectionPanel(
     private val displayPanel: DisplayPanel
 ) : JPanel(){
     private val sortList = arrayOf(
-        "Bubble Sort"
+        // Iterative sorting algorithms (comparison based)
+        "Selection Sort",
+        "Bubble Sort",
+        "Insertion Sort",
+        // Recursive sorting algorithms (comparison based)
+        "Merge Sort",
+        "Quick Sort"
     )
 
     private val selectionListener = SelectionListener()
@@ -42,6 +48,9 @@ class SelectionPanel(
 
             if (e.source == randomButton){
                 displayPanel.randomizeList()
+            }
+            else if (e.source == sortButton){
+                println("Sort button pressed!")
             }
 
             displayPanel.repaint()  // should be optimized to not redraw unnecessarily
