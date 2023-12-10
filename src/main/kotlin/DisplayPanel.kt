@@ -51,9 +51,14 @@ class DisplayPanel(
                     val temp = list[j]
                     list[j] = list[j + 1]
                     list[j + 1] = temp
+                    Thread.sleep(1)
+                    repaint()
+                    println("sorting...")
                 }
             }
         }
+
+        Thread.sleep(1)
 
         repaint()
 
