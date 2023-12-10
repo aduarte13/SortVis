@@ -12,8 +12,8 @@ class Main : JFrame(){
         val selectionPanel = SelectionPanel(displayPanel)
 
         // set panel sizes
-        selectionPanel.preferredSize = Dimension(850, 60)
-        displayPanel.preferredSize = Dimension(850, 600)
+        selectionPanel.preferredSize = Dimension(1000, 60)
+        displayPanel.preferredSize = Dimension(1000, 600)
 
         // add panels to frame
         add(selectionPanel, BorderLayout.CENTER)

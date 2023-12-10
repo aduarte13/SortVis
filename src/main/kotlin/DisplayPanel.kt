@@ -26,8 +26,12 @@ class DisplayPanel(
         g.font = Font("American Typewriter", Font.BOLD, 24)
 
         g.color = backgroundColor
-        g.fillRect(0, 0, 860, 610) // fill background
+        g.fillRect(0, 0, 1010, 610) // fill background
 
+
+    }
+
+    fun drawBars(g: Graphics){
 
     }
 
