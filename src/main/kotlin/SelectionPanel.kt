@@ -53,6 +53,7 @@ class SelectionPanel(
                 println("Sort button pressed!")
                 if (sortDropMenu.selectedItem == "Bubble Sort")
                     displayPanel.bubbleSort()
+                displayPanel.sorting = true
             }
 
             displayPanel.repaint()  // should be optimized to not redraw unnecessarily
