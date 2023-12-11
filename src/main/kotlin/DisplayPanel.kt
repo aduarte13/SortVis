@@ -24,18 +24,16 @@ class DisplayPanel(
 
     override fun paint(g: Graphics) {
 
-        g.font = Font("American Typewriter", Font.BOLD, 24)
-
         g.color = backgroundColor
         g.fillRect(0, 0, 1010, 610) // fill background
+
+        g.font = Font("American Typewriter", Font.BOLD, 24)
 
         drawBars(g)
 
     }
 
     private fun drawBars(g: Graphics){
-        g.color = backgroundColor
-        g.fillRect(0, 0, 1010, 610) // fill background
 
         g.color = regColor
 
@@ -58,21 +56,32 @@ class DisplayPanel(
                     list[j + 1] = temp
                     Thread.sleep(1)
                     println("sorting...")
-                    paint(this.graphics)
+                    redrawSwappingBars(j, j + 1)
                 }
             }
         }
 
-        Thread.sleep(1)
-
-        repaint()
-
     }
 
-    fun randomizeList(){
+    private fun redrawSwappingBars(bar1: Int, bar2: Int){
+        this.graphics.color = backgroundColor
+        this.graphics.fillRect(
+            bar1 + 1 + (bar1 * barWidth),0,
+            barWidth, 600)
+        this.graphics.fillRect(
+            bar2 + 1 + (bar2 * barWidth),0,
+            barWidth, 600)
 
-        list.shuffle()
-
+        this.graphics.color = regColor
+        this.graphics.fillRect(
+            bar1 + 1 + (bar1 * barWidth),500 - list[bar1],
+            barWidth, 500)
+        this.graphics.fillRect(
+            bar2 + 1 + (bar2 * barWidth),500 - list[bar2],
+            barWidth, 500)
+        paint(this.graphics)
     }
+
+    fun randomizeList() = list.shuffle()
 
 }
