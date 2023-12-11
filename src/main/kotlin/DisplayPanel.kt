@@ -1,9 +1,8 @@
 import java.awt.*
 import javax.swing.*
-import kotlin.random.Random
 
 class DisplayPanel(
-    private val listLength: Int = 250,
+    listLength: Int = 250,
     private val barWidth: Int = 4,
     private val list: MutableList<Int> = mutableListOf(),
 
@@ -16,11 +15,10 @@ class DisplayPanel(
     init{
         border = BorderFactory.createEtchedBorder()
 
-        for(i in 0 until listLength){
-            list.add(Random.nextInt(500))
+        for(i in 0..<listLength){
+            list.add(i * 2)
             println("" + i + " | " + list[i])
         }
-
 
     }
 
@@ -73,12 +71,8 @@ class DisplayPanel(
 
     fun randomizeList(){
 
-        list.clear()
+        list.shuffle()
 
-        for(i in 0 until listLength){
-            list.add(Random.nextInt(500))
-            println("" + i + " | " + list[i])
-        }
     }
 
 }
