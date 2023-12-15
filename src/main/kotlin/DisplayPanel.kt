@@ -63,6 +63,9 @@ class DisplayPanel(
 
     }
 
+
+    // TODO:
+    // FIX THIS BULLSHIT
     private fun redrawSwappingBars(bar1: Int, bar2: Int){
         this.graphics.color = backgroundColor
         this.graphics.fillRect(
