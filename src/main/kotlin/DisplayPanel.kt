@@ -64,8 +64,6 @@ class DisplayPanel(
     }
 
 
-    // TODO:
-    // FIX THIS BULLSHIT
     private fun redrawSwappingBars(bar1: Int, bar2: Int){
         this.graphics.color = backgroundColor
         this.graphics.fillRect(
@@ -84,6 +82,26 @@ class DisplayPanel(
             barWidth, 500)
         paint(this.graphics)
     }
+
+    // TODO:
+    // fix swapping bars call
+    fun insertionSort(){
+        val n = list.size
+        for (i in 1 until n) {
+            val key = list[i]
+            var j = i - 1
+            while (j >= 0 && list[j] > key) {
+                list[j + 1] = list[j]
+                j--
+            }
+            list[j + 1] = key
+            Thread.sleep(1)
+            println("sorting...")
+            //redrawSwappingBars(j+1, j)
+        }
+    }
+
+
 
     fun randomizeList() = list.shuffle()
 

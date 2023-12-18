@@ -53,6 +53,8 @@ class SelectionPanel(
                 println("Sort button pressed!")
                 if (sortDropMenu.selectedItem == "Bubble Sort")
                     displayPanel.bubbleSort()
+                if (sortDropMenu.selectedItem == "Insertion Sort")
+                    displayPanel.insertionSort()
                 displayPanel.sorting = true
             }
 
