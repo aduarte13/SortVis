@@ -95,7 +95,7 @@ class DisplayPanel(
                 j--
             }
             list[j + 1] = key
-            Thread.sleep(1)
+            Thread.sleep(10)
             println("sorting...")
             //redrawSwappingBars(j+1, j)
         }
