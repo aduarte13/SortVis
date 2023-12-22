@@ -3,7 +3,7 @@ import javax.swing.JFrame
 
 class Main : JFrame(){
     init{
-        title = "Music Vis"
+        title = "Sort Vis"
         defaultCloseOperation = EXIT_ON_CLOSE
         layout = BorderLayout()
 
