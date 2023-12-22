@@ -96,8 +96,8 @@ class DisplayPanel(
             }
             list[j + 1] = key
             Thread.sleep(10)
-            println("sorting...")
-            //redrawSwappingBars(j+1, j)
+            println("sorting... j = $j i = $i key = $key")
+            redrawSwappingBars(i, j + 1)
         }
     }
 
