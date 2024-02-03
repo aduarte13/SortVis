@@ -34,4 +34,21 @@ class Sort {
             //redrawSwappingBars(i, j + 1)
         }
     }
+    fun selectionSort(list: ArrayList<Int>) {
+        var min:Int
+        for (i in 0 until list.size) {
+            min = i
+            for (j in (i + 1) until list.size) {
+                if (list[j] < list[min]) {
+                    min = j
+                }
+            }
+            swap(list, min, i)
+        }
+    }
+    fun swap(a : ArrayList<Int>, b: Int, c:Int) {
+        val temp = a[b]
+        a[b] = a[c]
+        a[c] = temp
+    }
 }
